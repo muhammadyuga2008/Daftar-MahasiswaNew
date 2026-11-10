@@ -11,6 +11,9 @@
 <body>
    <div class="container">
     <div class="row">
+         @if (Session::has('status'))
+            <div class="text-center"><p class="text-success">{{ Session::get('status') }}</p></div>     
+            @endif
         @foreach ($fakultas as $item)
         <div class="col-4 mt-5">
             <div class="card shadow p-4">

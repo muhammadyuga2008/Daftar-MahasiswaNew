@@ -18,8 +18,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/detail/{id}',[MahasiswaController::class,'detail'])->name('detail');
     Route::get('/daftar',[MahasiswaController::class,'daftar'])->name('daftar');
     Route::post('/postdaftar',[MahasiswaController::class,'postdaftar'])->name('postdaftar');
-    
     Route::get('/admin',[AdminController::class,'admin'])->name('admin');
+    Route::get('/admin2',[AdminController::class,'admin2'])->name('admin2');
+    Route::get('/edit/{pendaftar}',[AdminController::class,'edit'])->name('edit');
+    Route::get('/lunas',[AdminController::class,'lunas'])->name('lunas');
     
 
 });

@@ -14,7 +14,7 @@
     <div class="card p-4 shadow border-dark" style="width: 380px; border-radius: 12px;">
         
         <h3 class="text-center fw-bold text-success">Form Login</h3>
-        <h6 class="text-center mb-4 text-purple" style="color: #8a2be2;">Universitas Bina Nusantara</h6>
+        <h6 class="text-center mb-4 text-purple" style="color: #8a2be2;">Universitas Indonesia</h6>
          @if(Session::has('status'))
             <div class="text-center"> <span style="color: rgb(50, 204, 53)">{{Session::get('status')}}</span></div>
         @endif~~

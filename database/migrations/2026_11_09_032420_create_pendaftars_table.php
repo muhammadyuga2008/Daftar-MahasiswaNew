@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('program_studi_id')->constrained('program_studis');
+            $table->string('nama_lengkap');
             $table->string('nik');
             $table->string('alamat');
             $table->enum('jenis_kelamin',['pria','wanita']);
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->string('no_hp');
             $table->year('lulusan_tahun');
-            $table->enum('status',['pending','bayar','sudah bayar']);
+            $table->enum('status',['belum lunas','lunas']);
             $table->timestamps();
         });
     }

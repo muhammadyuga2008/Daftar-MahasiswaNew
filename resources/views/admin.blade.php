@@ -16,6 +16,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Nik</th>
                     <th>Nama Mahasiswa</th>
                     <th>Fakultas</th>
                     <th>Program Studi</th>
@@ -25,17 +26,20 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                @foreach ($pendaftar as $p)
+                    <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$p->nik}}</td>
+                    <td>{{$p->nama_lengkap}}</td>
+                    <td>{{$p->programstudi->fakultas->nama_fakultas}}</td>
+                    <td>{{$p->ProgramStudi->prodi}}</td>
+                    <td>{{$p->status}}</td>
                     <td>
-                        <a href="" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('edit',$p->id) }}" class="btn btn-warning">Verifikasi</a>
                         <a href="" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

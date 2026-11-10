@@ -23,12 +23,13 @@ class MahasiswaController extends Controller
 
      public function daftar(){
         $prodi = ProgramStudi::with('fakultas')->get();
-        return view('pendaftaran',compact('prodi'));
+        $pendaftar = Pendaftar::where('user_id', Auth::id())->first();
+        return view('pendaftaran',compact('prodi','pendaftar'));
     }
 
       public function postdaftar(Request $request){
         $request->validate([
-            'name'=>'required',
+            'nama_lengkap'=>'required',
             'nik'=>'required',
             'agama'=>'required',
             'jenis_kelamin'=>'required',
@@ -42,7 +43,7 @@ class MahasiswaController extends Controller
         Pendaftar::create([
             'user_id'=>Auth::id(),
             'program_studi_id'=>$request->program_studi_id,
-            'name'=>$request->name,
+            'nama_lengkap'=>$request->nama_lengkap,
             'nik'=>$request->nik,
             'agama'=>$request->agama,
             'jenis_kelamin'=>$request->jenis_kelamin,
@@ -50,8 +51,9 @@ class MahasiswaController extends Controller
             'tempat_lahir'=>$request->tempat_lahir,
             'no_hp'=>$request->no_hp,
             'lulusan_tahun'=>$request->lulusan_tahun,
-            'alamat'=>$request->alamat
+            'alamat'=>$request->alamat,
+            'status'=>'belum lunas'
         ]);
-        return redirect()->route('daftar')->with('status','Daftar Berhasill');
+        return redirect()->route('mahasiswa')->with('status','Daftar Berhasill');
     }
 }

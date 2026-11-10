@@ -14,7 +14,7 @@
         <div class="card p-4 shadow border-dark" style="width: 380px; border-radius: 12px;">
 
         <h3 class="text-center fw-bold text-success">Form Registrasi</h3>
-        <h6 class="text-center mb-4 text-purple" style="color: #8a2be2;">Universitas Bina Nusantara</h6>
+        <h6 class="text-center mb-4 text-purple" style="color: #8a2be2;">Universitas Indonesia</h6>
 
         <div class="mb-3">
             <label class="form-label fw-bold">Nama Lengkap :</label>

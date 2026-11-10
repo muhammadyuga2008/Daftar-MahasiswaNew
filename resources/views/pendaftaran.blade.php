@@ -14,11 +14,13 @@
         <div class="container my-5 d-flex min-vh-100">
         <div class="card shadow p-4 mx-auto">
             <h3 class="text-center p-4">Universitas Indonesia</h3>
-
+                @if (Session::has('status'))
+                <div class="text-center"><p class="text-success">{{ Session::get('status') }}</p></div>     
+                @endif
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Nama:</label>
-                    <input type="text" class="form-control" name="name" >
+                    <input type="text" class="form-control" name="nama_lengkap" >
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Nik:</label>
